@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* IDC Architects — Ultra-Premium Modern Architecture Design System */
+:root {
+  --bg-sand: #fbf9f5;
+  --bg-sand-light: #ffffff;
+  --bg-sand-dark: #f2ece4;
+  --text-dark: #17181a;
+  --text-muted: #5e6268;
+  --gold-accent: #c5a059;
+  --gold-hover: #b08c45;
+  --bronze-accent: #8c6a48;
+  --charcoal-dark: #0f1113;
+  --charcoal-card: #181a1d;
+  --border-subtle: rgba(23, 24, 26, 0.08);
+  --border-dark-subtle: rgba(255, 255, 255, 0.12);
+  --radius-btn: 9999px; /* Smooth rounded pill buttons */
+  --radius-card: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg-sand);
+  color: var(--text-dark);
+  scroll-behavior: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  color: var(--text-dark);
+  background: var(--bg-sand);
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+/* Custom Shell Container */
+.idc-shell {
+  width: min(88rem, calc(100vw - 3rem));
+  margin-inline: auto;
+}
+
+@media (max-width: 640px) {
+  .idc-shell {
+    width: calc(100vw - 2rem);
+  }
+}
+
+/* Luxury Headings */
+.font-display {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+.font-body {
+  font-family: var(--font-body), sans-serif;
+}
+
+/* Modern Rounded Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-btn);
+  background: linear-gradient(135deg, #c5a059 0%, #b08c45 100%);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.825rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 18px rgba(197, 160, 89, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.45);
+  background: linear-gradient(135deg, #d4b068 0%, #be974c 100%);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-btn);
+  background: #17181a;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.825rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: #2a2c30;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-btn);
+  background: transparent;
+  color: #17181a;
+  font-weight: 500;
+  font-size: 0.825rem;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(23, 24, 26, 0.22);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  transform: translateY(-2px);
+  background: #17181a;
+  color: #ffffff;
+  border-color: #17181a;
+}
+
+.btn-ghost-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-btn);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.825rem;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-ghost-dark:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+/* Soft Modern Luxury Shadows */
+.card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(23, 24, 26, 0.06), 0 20px 45px -15px rgba(23, 24, 26, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-shadow:hover {
+  box-shadow: 0 20px 45px -10px rgba(23, 24, 26, 0.12), 0 35px 65px -15px rgba(23, 24, 26, 0.06);
+  transform: translateY(-4px);
+}
+
+.card-dark-shadow {
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.4), 0 25px 50px -15px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-dark-subtle);
+  border-radius: var(--radius-card);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-dark-shadow:hover {
+  box-shadow: 0 20px 45px -8px rgba(0, 0, 0, 0.55), 0 35px 70px -12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+}
+
+/* Eyebrow Pill Tag */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(197, 160, 89, 0.12);
+  color: #a37c35;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+.badge-pill-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  color: #e5c98d;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #fbf9f5;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(23, 24, 26, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a059;
+}
+
+/* Hide scrollbars on horizontal button sliders while retaining smooth swipe/scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #c5a059;
+  outline-offset: 3px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Seamless Continuous Marquee (Left-To-Right for Capability Cards) */
+@keyframes marquee-ltr {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-ltr {
+  display: flex;
+  width: max-content;
+  animation: marquee-ltr 18s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-ltr:hover,
+.group:hover .animate-marquee-ltr {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
